@@ -8,7 +8,7 @@ body {
     background-color: #FDF9ED;
     margin: 15px auto;
     padding: 15px 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: grid;
     grid-template: repeat(4, auto) / 1fr;
     grid-gap: 1.5em;
@@ -29,7 +29,7 @@ p {
     padding: 0;
 }
 
- /* a {
+/* a {
     font-weight: bold;
 }  */
 
@@ -113,6 +113,7 @@ ul li ul:hover {
     clear: both;
     width: 100%;
 }
+
 #nav_menu {
     grid-area: navi;
 }
@@ -198,6 +199,13 @@ section {
     cursor: pointer;
 }
 
+.slip {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 2em;
+    padding: 1em;
+    background-color: white;
+}
 
 section ul {
     margin-top: 0;
@@ -253,7 +261,7 @@ aside p {
 
 /* the styles for the footer */
 footer {
-    border-top: 2px solid #b4b4b4;
+    /* border-top: 2px solid #b4b4b4; */
     padding-top: .7em;
     grid-area: foot;
 }
@@ -346,13 +354,14 @@ footer p {
         grid-template: auto auto / 1fr;
         grid-gap: .5em;
         grid-template-areas:
-        "img01 img01 img01"
+            "img01 img01 img01"
             "sec2 sec2 sec2"
             "bio bio bio"
-            ;
+        ;
     }
 
-    .img-04, .img-02 {
+    .img-04,
+    .img-02 {
         display: none;
     }
 
