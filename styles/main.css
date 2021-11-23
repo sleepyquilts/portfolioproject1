@@ -136,6 +136,14 @@ section {
 .sec2 {
     grid-area: sec2;
 }
+
+.slip {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5em;
+    background-color: white;
+    padding: .5em;
+}
 section ul { 
 	margin-top: 0;
 	margin-bottom: 1.5em; 
