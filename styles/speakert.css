@@ -11,8 +11,8 @@ body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
 	width: 96%;
-    max-width: 1200px;
-	background-color: white;
+    max-width: 1000px;
+	background-color: light pink;
 	margin: 15px auto;
 	padding: 15px 0;
 	border: 1px solid black;
@@ -68,7 +68,7 @@ header img {
 #nav_menu ul {
 	list-style: none;
     display: grid;                         /* make the list a grid */
-    grid-template: auto / repeat(5, 1fr);  /* define one row and five columns */
+    grid-template: auto / repeat(4, 1fr);  /* define one row and five columns */
     align-content: center;                 /* center the row tracks vertically */
 	margin: 0;
 	padding: 0;
@@ -112,8 +112,8 @@ article img {
 aside {
     max-height: 200px;                  /* to limit background */
     min-height: 180px;                  /* to limit background */    
-	padding: 5%;                        /* based on size of column track */
-	background-color: #ffc0cb;
+	padding: 10%;                        /* based on size of column track */
+	background-color: #f1a6c0;
     grid-area: side;                    /* place the aside in a grid area */
 }
 aside h2 {
