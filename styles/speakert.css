@@ -8,14 +8,14 @@ html {
 /* standard 960 and above */
 
 body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family:'Roboto' Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
-	width: 96%;
+	width: 99%;
     max-width: 1000px;
 	background-color: light pink;
 	margin: 15px auto;
 	padding: 15px 0;
-	border: 1px solid black;
+	
     display: grid;                                   /* make the body a grid */
     grid-template: repeat(4, auro) / 1fr;
     grid-gap: 1.5em;                                 /* define the gap between grid areas */
@@ -27,7 +27,7 @@ body {
 }
 article, aside, h1, h2, h3, p {
 	margin: 0;
-	padding: 0;
+	padding: ;
 }
 a { font-weight: bold; }
 a:link, a:visited { color: #931420; }
@@ -47,13 +47,13 @@ header h2 {
 	font-size: 2.25em;
     color: #ffc0cb;
     text-shadow: 2px 3px 0 black;
-    margin-left: 12%;
+    margin-left: 35%;
 	margin-bottom: 0.25em;
 }
 header h3 {
 	font-size: 1.25em;
 	font-style: italic;
-    margin-left: 12%;
+    margin-left: 40%;
 }
 header img {
     width: 8%;
@@ -100,33 +100,46 @@ article {
     grid-area: arti;                   /* place the article in a grid area */
 }
 article h1 {
-	font-size: 1.625em;
+	font-size: 2em;
 	margin-bottom: 0.35em;
+	margin-left: 2.3em;
 }
 article img {
-    max-width: 60%;
+    max-width: 55%;
 	margin: 0 1.5em 1em 0;
 }
 
 /* the styles for the sidebar */
 aside {
-    max-height: 200px;                  /* to limit background */
-    min-height: 180px;                  /* to limit background */    
+    max-height: 590px;                  /* to limit background */
+    min-height: 570px;                  /* to limit background */    
 	padding: 10%;                        /* based on size of column track */
-	background-color: #f1a6c0;
+	background-color: #ffc0cb;
     grid-area: side;                    /* place the aside in a grid area */
+	max-width: 68%;
+
 }
+
+aside nav {
+	margin-left: 3em;
+	font-size: .9em;
+}
+
+
 aside h2 {
 	font-size: 1.25em;
 	padding-bottom: .5em;
+	margin-left: 3em;
 }
 aside ul { 
 	margin-top: 0;
-	margin-bottom: 1.5em; 
+	margin-bottom: 1em; 
 }
 aside li {
-	font-size: .875em;
+	font-size: 1em;
 	padding-bottom: 0.35em;
+	
+lin	
 }
 
 /* the styles for the footer */
