@@ -3,18 +3,55 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
     }
+
 #example1{
     padding: 20px;
     align-self: center;
     border: 3px solid grey;
     border-radius: 5%;
-}
 
+}
 
 #example2{
     padding: 20px;
     align-self: center;
     border: 3px solid grey;
     border-radius: 5%;
+    
+}
+
+#taylorwork {
+    padding: 50px;
+    border: 10px solid navy;
+    border-radius: 3%;
+    margin: auto;
+    text-align: center;
+}
+
+#taylorwork p{
+    padding: 5px;
+    font-weight: bold;
+}
+
+#jennahwork {
+    padding: 50px;
+    margin: auto;
+    max-width: 600px;
+    align-content: space-around;
+}
+
+#jennahwork p {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    
+
+}
+
+#tamarawork {
+
 }
