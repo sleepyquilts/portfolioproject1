@@ -5,7 +5,7 @@ if (!isset($developer_id)) {
     $developer_id = filter_input(INPUT_GET, 'developerID', 
             FILTER_VALIDATE_INT);
     if ($developer_id == NULL || $developer_id == FALSE) {
-        $developer_id = 1;
+        $developer_id = 2;
     }
 }
 
@@ -163,17 +163,7 @@ $statement->closeCursor();
         </section>
         <section class="img-01">
 
-            <img class="profile-img" src="images/carlo-01.jpg" alt="">
-
-        </section>
-        <section class="img-02">
-
-            <img class="profile-img" src="images/carlo-02.jpg" alt="">
-
-        </section>
-        <section class="img-04">
-
-            <img class="profile-img" src="images/carlo-04.jpg" alt="">
+            <img class="profile-img" src="src="images/jennah.jpg" alt="">
 
         </section>
         <section class="sec2">

@@ -62,4 +62,4 @@ INSERT INTO education (school, major, developerID) VALUES
 -- ('OLYMPIC COLLEGE','INFORMATION SYSTEMS', 3),
 -- ('OLYMPIC COLLEGE','INFORMATION SYSTEMS', 4);
 
-SELECT * FROM developer;
+SELECT * FROM skills;
