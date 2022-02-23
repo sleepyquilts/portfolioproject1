@@ -1,3 +1,60 @@
+<?php
+require_once('database.php');
+// Get developer ID
+if (!isset($developer_id)) {
+    $developer_id = filter_input(INPUT_GET, 'developerID', 
+            FILTER_VALIDATE_INT);
+    if ($developer_id == NULL || $developer_id == FALSE) {
+        $developer_id = 1;
+    }
+}
+
+// Get name for selected category
+//$queryCategory = 'SELECT * FROM categories
+//                  WHERE categoryID = :category_id';
+//$statement1 = $db->prepare($queryCategory);
+//$statement1->bindValue(':category_id', $category_id);
+//$statement1->execute();
+//$category = $statement1->fetch();
+//$category_name = $category['categoryName'];
+//$statement1->closeCursor();
+
+
+// Get all categories
+$query = 'SELECT * FROM developer';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$developer = $statement->fetchAll();
+$statement->closeCursor();
+
+//Get all skills
+$query = 'SELECT * FROM skill';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$skills = $statement->fetchAll();
+$statement->closeCursor();
+
+//Get all education
+
+$query = 'SELECT * FROM education';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$education = $statement->fetchAll();
+$statement->closeCursor();
+
+// Get products for selected category
+//$queryDeveloper = 'SELECT * FROM products
+//                  WHERE categoryID = :category_id
+//                  ORDER BY productID';
+//$statement3 = $db->prepare($queryDeveloper);
+//$statement3->bindValue(':developer_id', $developer_id);
+//$statement3->execute();
+//$products = $statement3->fetchAll();
+//$statement3->closeCursor();
+?>
 <!doctype html>
 
 <html lang="en">
