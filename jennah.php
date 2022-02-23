@@ -61,12 +61,12 @@ $statement->closeCursor();
 
 <head>
 
-    <title>Nerd Crew Portfolio</title>
+    <title>Jennah Hubenak's Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/icons8-nerd-100.png">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/carlo.css">
     <link rel="stylesheet" href="styles/slicknav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,34 +87,35 @@ $statement->closeCursor();
             });
         });
     </script>
-</head>
 
+</head>
 <body>
     <header>
+        <!-- <img src="images/logo.gif" alt="Town Hall Logo"> -->
         <h2>Nerd Crew</h2>
         <h3>Portfolio</h3>
     </header>
     <nav id="mobile_menu"></nav>
     <nav id="nav_menu">
         <ul id="menu">
-            <li><a class="current" href="index.html">Home</a></li>
+            <li><a class="current" href="index.php">Home</a></li>
             <li><a href="work.html">Work</a>
                 <ul>
-                    <li><a href="carlowork.html">Carlo</a></li>
-                    <li><a href="jennahwork.html">Jennah</a></li>
-                    <li><a href="tamarawork.html">Tamara</a></li>
-                    <li><a href="taylorwork.html">Taylor</a></li>
+                    <li><a href="carlowork.php">Carlo</a></li>
+                    <li><a href="jennahwork.php">Jennah</a></li>
+                    <li><a href="tamarawork.php">Tamara</a></li>
+                    <li><a href="taylorwork.php">Taylor</a></li>
                 </ul>
             </li>
             <li> <a href="#">About us</a>
                 <ul>
-                    <li><a href="carlo.html">Carlo</a></li>
-                    <li><a href="jennah.html">Jennah</a></li>
-                    <li><a href="tamara.html">Tamara</a></li>
-                    <li><a href="taylor.html">Taylor</a></li>
+                    <li><a href="carlo.php">Carlo</a></li>
+                    <li><a href="jennah.php">Jennah</a></li>
+                    <li><a href="tamara.php">Tamara</a></li>
+                    <li><a href="taylor.php">Taylor</a></li>
                 </ul>
             </li>
-            <li class="lastitem"><a href="contact.html">Contact</a></li>
+            <li class="lastitem"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <main>
