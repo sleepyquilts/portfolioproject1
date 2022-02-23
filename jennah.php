@@ -119,6 +119,75 @@ $statement->closeCursor();
         </ul>
     </nav>
     <main>
+        
+        <section class="bio">
+            <h2>
+                Education
+            </h2>
+<!--            <p><?php echo print_r($developer); ?></p>
+            <ul>
+            <?php foreach ($developer as $dev) : ?>
+            <li>
+                 <?php echo $dev['developerName']; ?>
+            </li>
+            <?php endforeach; ?>-->
+            
+            <ul>
+            <?php foreach ($education as $edu) : ?>
+            <li>
+                 <?php echo $edu['school']; ?>: <?php echo $edu['major']; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+<!--        </ul>-->
+
+            <h2>
+                Skills
+            </h2>
+            
+            <p>
+                I have training and experience in the following areas:
+            </p>
+            <ul>
+            <?php foreach ($skills as $skill) : ?>
+            <li>
+                 <?php echo $skill['skill']; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+            <div id="advice">
+                <h3>Words of wisdom</h3>
+
+            </div>
+            
+        </section>
+        <section class="img-01">
+
+            <img class="profile-img" src="images/carlo-01.jpg" alt="">
+
+        </section>
+        <section class="img-02">
+
+            <img class="profile-img" src="images/carlo-02.jpg" alt="">
+
+        </section>
+        <section class="img-04">
+
+            <img class="profile-img" src="images/carlo-04.jpg" alt="">
+
+        </section>
+        <section class="sec2">
+            <h1>Jennah Hubenak</h1>
+            <h2>Web Developer</h2>
+            <p>
+               
+       
+            </p>
+
+        </section>
+
+    </main>
+    <!--<main>
         <article>
             <h1>Jennah</h1>
             <img src="images/jennah.jpg" alt="Jennah Hubenak" width="300px"/>
@@ -160,6 +229,7 @@ $statement->closeCursor();
           </aside>
           
     </main>
+    -->
     <footer>
         <p>Olympic College BAS-IS Class 2021</p>
         <p><a target="_blank" href="https://icons8.com/icon/2753/nerd">Nerd</a> icon by <a target="_blank"
