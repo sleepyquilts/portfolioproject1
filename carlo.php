@@ -99,13 +99,13 @@ $statement->closeCursor();
     <nav id="mobile_menu"></nav>
     <nav id="nav_menu">
         <ul id="menu">
-            <li><a class="current" href="index.php">Home</a></li>
+            <li><a class="current" href="index.html">Home</a></li>
             <li><a href="work.html">Work</a>
                 <ul>
-                    <li><a href="carlowork.php">Carlo</a></li>
-                    <li><a href="jennahwork.php">Jennah</a></li>
-                    <li><a href="tamarawork.php">Tamara</a></li>
-                    <li><a href="taylorwork.php">Taylor</a></li>
+                    <li><a href="carlowork.html">Carlo</a></li>
+                    <li><a href="jennahwork.html">Jennah</a></li>
+                    <li><a href="tamarawork.html">Tamara</a></li>
+                    <li><a href="taylorwork.html">Taylor</a></li>
                 </ul>
             </li>
             <li> <a href="#">About us</a>
@@ -116,7 +116,7 @@ $statement->closeCursor();
                     <li><a href="taylor.php">Taylor</a></li>
                 </ul>
             </li>
-            <li class="lastitem"><a href="contact.php">Contact</a></li>
+            <li class="lastitem"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
@@ -152,16 +152,12 @@ $statement->closeCursor();
             <ul>
             <?php foreach ($skills as $skill) : ?>
             <li>
-                 <?php echo $skill['skill']; ?>
+                 <?php echo $skill['skill']; ?> 
             </li>
             <?php endforeach; ?>
         </ul>
 
-            <p>
-                Address: 300 11th Ave APT 406 Seattle WA 98122 <br>
-                Phone: <a href="tel:360-440-4392">360-440-4392</a> <br>
-                Email: <a href="mailto:carlosantos@student.olympic.edu">carlosantos@student.olympic.edu</a>
-            </p>
+
             <p>
                 <a class="icon-link" href="https://github.com/carlox7" target="_blank">
                     <ion-icon name="logo-github"></ion-icon>
