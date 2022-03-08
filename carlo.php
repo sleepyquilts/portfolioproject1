@@ -99,13 +99,13 @@ $statement->closeCursor();
     <nav id="mobile_menu"></nav>
     <nav id="nav_menu">
         <ul id="menu">
-            <li><a class="current" href="index.html">Home</a></li>
-            <li><a href="work.html">Work</a>
+            <li><a class="current" href="index.php">Home</a></li>
+            <li><a href="work.php">Work</a>
                 <ul>
-                    <li><a href="carlowork.html">Carlo</a></li>
-                    <li><a href="jennahwork.html">Jennah</a></li>
-                    <li><a href="tamarawork.html">Tamara</a></li>
-                    <li><a href="taylorwork.html">Taylor</a></li>
+                    <li><a href="carlowork.php">Carlo</a></li>
+                    <li><a href="jennahwork.php">Jennah</a></li>
+                    <li><a href="tamarawork.php">Tamara</a></li>
+                    <li><a href="taylorwork.php">Taylor</a></li>
                 </ul>
             </li>
             <li> <a href="#">About us</a>
@@ -116,7 +116,7 @@ $statement->closeCursor();
                     <li><a href="taylor.php">Taylor</a></li>
                 </ul>
             </li>
-            <li class="lastitem"><a href="contact.html">Contact</a></li>
+            <li class="lastitem"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <main>
@@ -140,7 +140,6 @@ $statement->closeCursor();
             </li>
             <?php endforeach; ?>
         </ul>
-<!--        </ul>-->
 
             <h2>
                 Skills

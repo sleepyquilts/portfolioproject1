@@ -5,7 +5,7 @@ if (!isset($developer_id)) {
     $developer_id = filter_input(INPUT_GET, 'developerID', 
             FILTER_VALIDATE_INT);
     if ($developer_id == NULL || $developer_id == FALSE) {
-        $developer_id = 2;
+        $developer_id = 1;
     }
 }
 
@@ -99,7 +99,7 @@ $statement->closeCursor();
     <nav id="nav_menu">
         <ul id="menu">
             <li><a class="current" href="index.php">Home</a></li>
-            <li><a href="work.html">Work</a>
+            <li><a href="work.php">Work</a>
                 <ul>
                     <li><a href="carlowork.php">Carlo</a></li>
                     <li><a href="jennahwork.php">Jennah</a></li>

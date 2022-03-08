@@ -1,10 +1,47 @@
+<?php
+require_once('database.php');
+// Get developer ID
+if (!isset($developer_id)) {
+    $developer_id = filter_input(INPUT_GET, 'developerID', 
+            FILTER_VALIDATE_INT);
+    if ($developer_id == NULL || $developer_id == FALSE) {
+        $developer_id = 3 ;
+    }
+}
+// Get all categories
+$query = 'SELECT * FROM developer';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$developer = $statement->fetchAll();
+$statement->closeCursor();
+
+//Get all skills
+$query = 'SELECT * FROM skill';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$skills = $statement->fetchAll();
+$statement->closeCursor();
+
+//Get all education
+
+$query = 'SELECT * FROM education';
+$statement = $db->prepare($query);
+//$statement->bindValue(':developerID', $developer_id);
+$statement->execute();
+$education = $statement->fetchAll();
+$statement->closeCursor();
+
+?>
+
 <!doctype html>
 
 <html lang="en">
 
 <head>
 
-    <title>Carlo Santos Portfolio</title>
+    <title>Taylor Hillis' Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/icons8-nerd-100.png">
@@ -41,24 +78,24 @@
     <nav id="mobile_menu"></nav>
     <nav id="nav_menu">
         <ul id="menu">
-            <li><a class="current" href="index.html">Home</a></li>
-            <li><a href="work.html">Work</a>
+            <li><a class="current" href="index.php">Home</a></li>
+            <li><a href="work.php">Work</a>
                 <ul>
-                    <li><a href="carlowork.html">Carlo</a></li>
-                    <li><a href="jennahwork.html">Jennah</a></li>
-                    <li><a href="tamarawork.html">Tamara</a></li>
-                    <li><a href="taylorwork.html">Taylor</a></li>
+                    <li><a href="carlowork.php">Carlo</a></li>
+                    <li><a href="jennahwork.php">Jennah</a></li>
+                    <li><a href="tamarawork.php">Tamara</a></li>
+                    <li><a href="taylorwork.php">Taylor</a></li>
                 </ul>
             </li>
             <li> <a href="#">About us</a>
                 <ul>
-                    <li><a href="carlo.html">Carlo</a></li>
-                    <li><a href="jennah.html">Jennah</a></li>
-                    <li><a href="tamara.html">Tamara</a></li>
-                    <li><a href="taylor.html">Taylor</a></li>
+                    <li><a href="carlo.php">Carlo</a></li>
+                    <li><a href="jennah.php">Jennah</a></li>
+                    <li><a href="tamara.php">Tamara</a></li>
+                    <li><a href="taylor.php">Taylor</a></li>
                 </ul>
             </li>
-            <li class="lastitem"><a href="contact.html">Contact</a></li>
+            <li class="lastitem"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <main>
@@ -66,17 +103,22 @@
             <h2>
                 Education
             </h2>
+<!--            <p><?php echo print_r($developer); ?></p>
             <ul>
-                <li>
-                    North Mason High School
-                </li>
-		<li>
-		    Olympic College: Associate of Arts
-		</li>
-                <li>
-                    Olympic College: Information Systems
-                </li>
-            </ul>
+            <?php foreach ($developer as $dev) : ?>
+            <li>
+                 <?php echo $dev['developerName']; ?>
+            </li>
+            <?php endforeach; ?>-->
+            
+            <ul>
+            <?php foreach ($education as $edu) : ?>
+            <li>
+                 <?php echo $edu['school']; ?>: <?php echo $edu['major']; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+
             <h2>
                 Skills
             </h2>
@@ -85,35 +127,14 @@
                 I have training and experience in the following areas:
             </p>
             <ul>
-                <li>
-                    Project Management
-                </li>
-		<li>
-		    Group Managment
-		</li>
-		<li>
-		    Group Communication
-		</li>
-                <li>
-                    HTML5
-                </li>
-                <li>
-                    JavaScript
-                </li>
-		<li>
-		    Basic Networking
-		</li>
-		<li>
-		    OS Set Up & Managment
-		</li>
-            </ul>
-
-            <p>
-                Address: 491 NE Haven Lake Drive, Belfair, WA, 98588 <br>
-                Phone: <a href="tel:253-278-6365">253-278-6365</a> <br>
-                Email: <a href="mailto:taylorhillis@student.olympic.edu">taylorhillis@student.olympic.edu</a>
-            </p>
-            <p>
+            <?php foreach ($skills as $skill) : ?>
+            <li>
+                 <?php echo $skill['skill']; ?> 
+            </li>
+            <?php endforeach; ?>
+        </ul>   
+        
+        <p>
                 <a class="icon-link" href="https://github.com/TaylorHillis" target="_blank">
                     <ion-icon name="logo-github"></ion-icon>
                 </a>
@@ -134,27 +155,10 @@
             <img class="profile-img" src="images/taylor-01.jpg" alt="">
 
         </section>
-        <section class="img-02">
-
-            <img class="profile-img" src="images/taylor-02.jpg" alt="">
-
-        </section>
-        <!-- <section class="img-03">
-            <img class="profile-img" src="images/taylor-03.jpg" alt="">
-        </section> -->
-        <section class="img-04">
-
-            <img class="profile-img" src="images/taylor-04.jpg" alt="">
-
-        </section>
         <section class="sec2">
             <h1>Taylor Hillis</h1>
             <h2>Networking & Security</h2>
-            <p>While I am competent in the basics of several different fields of IT, I would consider my two areas of 
-            greatest expertise to IT networking & IT security. I have an extensive background in food service and customer
-            service. My expierence in these fields have taught me several things including how to effectively interact with
-            stakeholders, how to be a team player and how to fully contribute to the success of a company. While I have no 
-            IT work expierence I am very eager to gain expierence. I look forward to working for my future employers.</p>
+            <p></p>
 
         </section>
 
