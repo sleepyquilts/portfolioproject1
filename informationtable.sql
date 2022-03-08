@@ -28,6 +28,14 @@ CREATE TABLE education (
     FOREIGN KEY (developerID) REFERENCES developer(developerID)
 );
 
+CREATE TABLE pictures (
+	pictureID	mediumint NOT NULL auto_increment,
+    pictureURL VARCHAR(255) NOT NULL,
+    developerID	mediumint,
+    PRIMARY KEY (pictureID),
+    FOREIGN KEY (developerID) REFERENCES developer(developerID)
+);
+
 -- insert data into the database
 
 
@@ -52,7 +60,6 @@ INSERT INTO skill (skill, developerID) VALUES
 ('HTML5/CSS', 2),
 ('JavaScript', 2),
 ('Github', 2),
-('Cisco', 2),
 ('Project Management', 3),
 ('HTML5/CSS', 3),
 ('JavaScript', 3),
@@ -65,8 +72,15 @@ INSERT INTO education (school, major, developerID) VALUES
 ('University of Washington','Communication', 1),
 ('Olympic College','Information Systems', 2),
 ('The University of Texas','Economics', 2),
-('OLYMPIC COLLEGE','INFORMATION SYSTEMS', 3),
-('OLYMPIC COLLEGE','INFORMATION SYSTEMS', 4);
+('Olympic College','Information Systems', 3),
+('Olympic College','Information Systems', 4);
 
-Select * from skill
-where developerID=1;
+INSERT INTO pictures () Values 
+(),
+(),
+(),
+(),
+();
+
+Select * from education
+where developerID=2;
