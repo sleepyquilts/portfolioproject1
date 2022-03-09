@@ -1,60 +1,3 @@
-<?php
-require_once('database.php');
-// Get developer ID
-if (!isset($developer_id)) {
-    $developer_id = filter_input(INPUT_GET, 'developerID', 
-            FILTER_VALIDATE_INT);
-    if ($developer_id == NULL || $developer_id == FALSE) {
-        $developer_id = 1;
-    }
-}
-
-// Get name for selected category
-//$queryCategory = 'SELECT * FROM categories
-//                  WHERE categoryID = :category_id';
-//$statement1 = $db->prepare($queryCategory);
-//$statement1->bindValue(':category_id', $category_id);
-//$statement1->execute();
-//$category = $statement1->fetch();
-//$category_name = $category['categoryName'];
-//$statement1->closeCursor();
-
-
-// Get all categories
-$query = 'SELECT * FROM developer WHERE developerID = 1';
-$statement = $db->prepare($query);
-//$statement->bindValue(':developerID', $developer_id);
-$statement->execute();
-$developer = $statement->fetchAll();
-$statement->closeCursor();
-
-//Get all skills
-$query = 'SELECT * FROM skill WHERE developerID = 1';
-$statement = $db->prepare($query);
-//$statement->bindValue(':developerID', $developer_id);
-$statement->execute();
-$skills = $statement->fetchAll();
-$statement->closeCursor();
-
-//Get all education
-
-$query = 'SELECT * FROM education WHERE developerID = 1';
-$statement = $db->prepare($query);
-//$statement->bindValue(':developerID', $developer_id);
-$statement->execute();
-$education = $statement->fetchAll();
-$statement->closeCursor();
-
-$query = 'SELECT * FROM images WHERE developerID = 1';
-$statement = $db->prepare($query);
-//$statement->bindValue(':developerID', $developer_id);
-$statement->execute();
-$images = $statement->fetchAll();
-$statement->closeCursor();
-
-
-?>
-
 <!doctype html>
 
 <html lang="en">
@@ -87,7 +30,6 @@ $statement->closeCursor();
             });
         });
     </script>
-
 </head>
 
 <body>
@@ -99,49 +41,39 @@ $statement->closeCursor();
     <nav id="mobile_menu"></nav>
     <nav id="nav_menu">
         <ul id="menu">
-            <li><a class="current" href="index.php">Home</a></li>
-            <li><a href="#">Work</a>
+            <li><a class="current" href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a>
                 <ul>
-                    <li><a href="carlowork.php">Carlo</a></li>
-                    <li><a href="jennahwork.php">Jennah</a></li>
-                    <li><a href="tamarawork.php">Tamara</a></li>
-                    <li><a href="taylorwork.php">Taylor</a></li>
+                    <li><a href="carlowork.html">Carlo</a></li>
+                    <li><a href="jennahwork.html">Jennah</a></li>
+                    <li><a href="tamarawork.html">Tamara</a></li>
+                    <li><a href="taylorwork.html">Taylor</a></li>
                 </ul>
             </li>
             <li> <a href="#">About us</a>
                 <ul>
-                    <li><a href="carlo.php">Carlo</a></li>
-                    <li><a href="jennah.php">Jennah</a></li>
-                    <li><a href="tamara.php">Tamara</a></li>
-                    <li><a href="taylor.php">Taylor</a></li>
+                    <li><a href="carlo.html">Carlo</a></li>
+                    <li><a href="jennah.html">Jennah</a></li>
+                    <li><a href="tamara.html">Tamara</a></li>
+                    <li><a href="taylor.html">Taylor</a></li>
                 </ul>
             </li>
-            <li class="lastitem"><a href="contact.php">Contact</a></li>
+            <li class="lastitem"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <main>
-        
         <section class="bio">
             <h2>
                 Education
             </h2>
-<!--            <p><?php echo print_r($developer); ?></p>
             <ul>
-            <?php foreach ($developer as $dev) : ?>
-            <li>
-                 <?php echo $dev['developerName']; ?>
-            </li>
-            <?php endforeach; ?>-->
-            
-            <ul>
-            <?php foreach ($education as $edu) : ?>
-            <li>
-                 <?php echo $edu['school']; ?>: <?php echo $edu['major']; ?>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-<!--        </ul>-->
-
+                <li>
+                    Olympic Collge: Information Systems
+                </li>
+                <li>
+                    University of Washington: Communication
+                </li>
+            </ul>
             <h2>
                 Skills
             </h2>
@@ -150,14 +82,43 @@ $statement->closeCursor();
                 I have training and experience in the following areas:
             </p>
             <ul>
-            <?php foreach ($skills as $skill) : ?>
-            <li>
-                 <?php echo $skill['skill']; ?> 
-            </li>
-            <?php endforeach; ?>
-        </ul>
+                <li>
+                    Project Management
+                </li>
+                <li>
+                    HTML5/CSS
+                </li>
+                <li>
+                    JavaScript
+                </li>
+                <li>
+                    MongoDB
+                </li>
+                <li>
+                    Github
+                </li>
+                <li>
+                    jQuery
+                </li>
+                <li>
+                    PostgreSQL
+                </li>
+                <li>
+                    Node.js
+                </li>
+                <li>
+                    Express
+                </li>
+                <li>
+                    Angluar
+                </li>
+            </ul>
 
-
+            <p>
+                Address: 300 11th Ave APT 406 Seattle WA 98122 <br>
+                Phone: <a href="tel:360-440-4392">360-440-4392</a> <br>
+                Email: <a href="mailto:carlosantos@student.olympic.edu">carlosantos@student.olympic.edu</a>
+            </p>
             <p>
                 <a class="icon-link" href="https://github.com/carlox7" target="_blank">
                     <ion-icon name="logo-github"></ion-icon>
@@ -180,7 +141,6 @@ $statement->closeCursor();
             </div>
             
         </section>
-        
         <section class="img-01">
 
             <img class="profile-img" src="images/carlo-01.jpg" alt="">
@@ -201,16 +161,15 @@ $statement->closeCursor();
             <img class="profile-img" src="images/carlo-04.jpg" alt="">
 
         </section>
-        
         <section class="sec2">
-            <?php foreach ($developer as $dev) : ?>
-            <h1><?php echo $dev['developerName']; ?> </h1>
-            <h2><?php echo $dev['jobRoll']; ?> </h2>
-            <p><?php echo $dev['biography']; ?> </p>
-            <?php endforeach; ?>
-            
-            
-            
+            <h1>Carlo Santos</h1>
+            <h2>Web Developer</h2>
+            <p>I am a Web Developer and am always looking to learn new skills. I have a background in communications and
+                customer service. My many years of customer service have taught me how to effectively interact with
+                stakeholders, how to be a team player and how to fully contribute to the success of a company. My
+                current role as a Web Developer also has me working in the marketing team. I have been in charge of the
+                online presence of new product integrations, promotions and sales in the US and EMEA regions. I look
+                forward to working with all future clients.</p>
 
         </section>
 

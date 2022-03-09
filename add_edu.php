@@ -1,28 +1,30 @@
 <?php
-// Get the product data
+// Get the education data
 $developer_id = filter_input(INPUT_POST, 'developerID', FILTER_VALIDATE_INT);
-$skill = filter_input(INPUT_POST, 'skill');
+$school = filter_input(INPUT_POST, 'school');
+$major = filter_input(INPUT_POST, 'major');
 
 // Validate inputs
 if ($developer_id == null || $developer_id == false ||
-        $skill == null) {
+        $school == null) {
     $error = "Invalid skill data. Check all fields and try again.";
     include('error.php');
 } else {
     require_once('database.php');
 
-    // Add the product to the database  
-    $query = 'INSERT INTO skill
-                 (skill, developerID)
+    // Add the edu to the database  
+    $query = 'INSERT INTO education
+                 (school, major, developerID)
               VALUES
-                 (:skill, :developer)';
+                 (:school, :major, :developer)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':skill', $skill);
+    $statement->bindValue(':school', $school);
+        $statement->bindValue(':major', $major);
     $statement->bindValue(':developer', $developer_id);
     $statement->execute();
     $statement->closeCursor();
 
-    // Display the Product List page
-    include('admin.php');
+    // Display the Index page
+    include('index.php');
 }
 ?>
