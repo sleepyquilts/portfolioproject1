@@ -16,4 +16,4 @@ if ($skill_id != false && $developer_id != false) {
 }
 
 // Display the Product List page
-include('admin.php');
+include('index.php');
