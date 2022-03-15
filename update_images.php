@@ -1,6 +1,7 @@
 <?php
 // Get the form data
 $developer_id = filter_input(INPUT_POST, 'developerID', FILTER_VALIDATE_INT);
+$image_id = filter_input(INPUT_POST, 'imageID', FILTER_VALIDATE_INT);
 $img = filter_input(INPUT_POST, 'imgUrl');
 
 // Validate inputs
@@ -13,11 +14,11 @@ if ($developer_id == null || $developer_id == false ||
 
     // Add the product to the database  
     $query = 'UPDATE images
-              SET imgURL = :img
-              WHERE developerID = :developer_id';
+              SET imageURL = :img
+              WHERE imageID = :image_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':img', $img);
-    $statement->bindValue(':developer_id', $developer_id);
+    $statement->bindValue(':image_id', $image_id);
     $statement->execute();
     $statement->closeCursor();
 

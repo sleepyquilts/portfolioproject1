@@ -148,9 +148,9 @@ main {
     grid-template: repeat(3, 1fr);
     grid-gap: 1%;
     grid-template-areas:
-        "sec2 img04 img02"
-        "bio img04 img02"
-        "bio img04 img01";
+        "sec2 img01 img02"
+        "bio img01 img02"
+        "bio img01 img03";
 }
 
 

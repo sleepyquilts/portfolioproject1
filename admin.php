@@ -166,21 +166,29 @@ $statement->closeCursor();
                             <input type="submit" name="update" value="Update info"><br>
                         </form>
                         <br>
-                        <form action="update_images.php" method="post"
-                              id="update_images_form">
+                        <?php foreach ($images as $img) : ?>
+                        <?php if ($img['developerID'] === $dev['developerID']): ?>
+                            <form action="update_images.php" method="post"
+                                  id="update_images_form">
 
-                            <label for="developer">Images:</label><br>
-                            <input type="hidden" name="developerID"
-                                   value="<?php echo $dev['developerID']; ?>">
-                                   <?php foreach ($images as $img) : ?>
-                                       <?php if ($img['developerID'] === $dev['developerID']): ?>
+                                <label for="developer">Images:</label><br>
+                                <input type="hidden" name="developerID"
+                                       value="<?php echo $dev['developerID']; ?>">
+
+                                <input type="hidden" name="imageID"
+                                       value="<?php echo $img['imageID']; ?>">
+
+                                
+
                                     <input style="width: 300px;" type="text" value="<?php echo $img['imageURL']; ?>" name="imgUrl">
                                     <br>
                                     <br>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                            <input type="submit" name="update" value="Update images"><br>
+                                
+                            
+                                    <input type="submit" name="update" value="Update image"><br><br>
+                            <?php endif; ?>
                         </form>
+                        <?php endforeach; ?>
                         <br>
 
                     </div>

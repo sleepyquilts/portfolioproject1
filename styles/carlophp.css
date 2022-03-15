@@ -1,0 +1,420 @@
+/* type selectors */
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 96%;
+    max-width: 1200px;
+    background-color: #FDF9ED;
+    margin: 15px auto;
+    padding: 15px 0;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr;
+    grid-gap: 1.5em;
+    grid-template-areas:
+        "head"
+        "navi"
+        "main"
+        "foot";
+}
+
+section,
+aside,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* a {
+    font-weight: bold;
+}  */
+
+#nav-menu a:link,
+a:visited {
+    color: #00008b;
+}
+
+#nav-menu a:hover,
+a:focus {
+    color: black;
+}
+
+p {
+    font-size: .875em;
+    padding-bottom: .5em;
+}
+
+em {
+    font-weight: bold;
+}
+
+/* the styles for the header */
+header {
+    grid-area: head;
+}
+
+header h2 {
+    font-family: 'Roboto',
+        sans-serif;
+    font-family: 'Source Code Pro',
+        monospace;
+    font-size: 3em;
+    color: #90ee90;
+    text-shadow: 2px 3px 0 black;
+    margin-left: 1%;
+    margin-bottom: .25em;
+}
+
+header h3 {
+    font-size: 1.25em;
+    font-style: italic;
+    margin-left: 1%;
+}
+
+header img {
+    width: 8%;
+    max-width: 80px;
+    min-width: 40px;
+    float: left;
+    margin-left: 2%;
+}
+
+/* The styles for the navigation menu */
+#menu li {
+    display: block;
+    transition-duration: 0.5s;
+}
+
+#menu li:hover {
+    cursor: pointer;
+}
+
+#menu li ul {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 300px;
+    display: none;
+}
+
+#menu li:hover>ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+#menu li ul li {
+    clear: both;
+    width: 100%;
+}
+
+#nav_menu {
+    grid-area: navi;
+}
+
+#nav_menu ul {
+    list-style: none;
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#nav_menu ul li a {
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    padding: .7em 0;
+    text-decoration: none;
+    background-color: #90ee90;
+}
+
+#nav_menu ul li a.current {
+    color: #00008b !important;
+}
+
+/* the styles for the main element */
+main {
+    margin: 0 2%;
+    grid-area: main;
+    display: grid;
+    grid-template: repeat(3, 1fr);
+    grid-gap: 1%;
+    grid-template-areas:
+        "sec2 img01 img02"
+        "bio img01 img02"
+        "bio img01 img03";
+}
+
+
+/* the styles for the section */
+section {
+    grid-area: sec;
+}
+
+.sec2 {
+    grid-area: sec2;
+}
+
+.img-01 {
+    grid-area: img01;
+}
+
+.img-02 {
+    grid-area: img02;
+}
+
+.img-03 {
+    grid-area: img03;
+}
+
+.img-04 {
+    grid-area: img04;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio {
+    grid-area: bio;
+}
+
+.icon-link,
+.icon-link:hover,
+.icon-link:focus,
+.icon-link:active {
+    color: inherit;
+    text-decoration: none;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.slip {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 2em;
+    padding: 1em;
+    background-color: white;
+}
+
+section ul {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+section li {
+    font-size: 95%;
+    padding-bottom: .35em;
+}
+
+section h1 {
+    font-size: 170%;
+    margin-bottom: 0.35em;
+}
+
+section h2 {
+    font-size: 1.3em;
+    margin-bottom: 0.35em;
+}
+
+#contact_us {
+    margin-top: 1em;
+}
+
+a.date_passed {
+    color: gray;
+}
+
+/* the styles for the sidebar */
+aside {
+    max-height: 320px;
+    min-height: 200px;
+    padding: 5%;
+    background-color: #90ee90;
+    grid-area: side;
+}
+
+aside h2 {
+    font-size: 1.25em;
+    padding-bottom: .5em;
+}
+
+aside h3 {
+    font-size: 1em;
+    color: #931420;
+    padding-bottom: .5em;
+}
+
+aside p {
+    margin-bottom: .5em;
+}
+
+/* the styles for the footer */
+footer {
+    /* border-top: 2px solid #b4b4b4; */
+    padding-top: .7em;
+    grid-area: foot;
+}
+
+footer p {
+    font-size: .75em;
+    text-align: right;
+    margin-right: 2%;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+.home-image {
+    width: 100%;
+    height: auto;
+}
+
+/* media queries */
+
+/* tablet portrait to standard 960 */
+@media only screen and (max-width: 959px) {
+    #nav_menu ul li a {
+        font-size: .875em;
+    }
+
+    section h1 {
+        font-size: 1.5em;
+    }
+
+    section h2,
+    aside h2 {
+        font-size: 1.125em;
+    }
+}
+
+/* mobile landscape to tablet portrait */
+@media only screen and (max-width: 767px) {
+    #nav_menu {
+        display: none;
+    }
+
+    #mobile_menu {
+        display: block;
+    }
+
+    .slicknav_menu {
+        background-color: #facd8a !important;
+    }
+
+    body {
+        width: 100%;
+        margin: 0;
+        border: none;
+        grid-gap: 1.5em;
+    }
+
+    header {
+        display: grid;
+        grid-template: repeat(3, auto) / 1fr;
+        grid-gap: .3em;
+        justify-items: center;
+    }
+
+    header h2 {
+        font-size: 1.625em;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    header h3 {
+        font-size: 1em;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    header img {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 1em;
+    }
+
+    #mobile_menu {
+        grid-area: navi;
+    }
+
+    main {
+        margin: 0;
+        grid-template: auto auto / 1fr;
+        grid-gap: .5em;
+        grid-template-areas:
+            "img01 img01 img01"
+            "sec2 sec2 sec2"
+            "bio bio bio"
+        ;
+    }
+
+    .img-04,
+    .img-02 {
+        display: none;
+    }
+
+    section {
+        width: 96%;
+        margin: 0 2%;
+        padding-right: 0;
+    }
+
+    aside {
+        width: 92%;
+        margin: 0 2%;
+        padding: 2%;
+    }
+
+    footer {
+        margin-right: 0;
+    }
+
+    footer p {
+        text-align: center;
+    }
+}
+
+/* mobile portrait to mobile landscape */
+@media only screen and (max-width: 479px) {
+    header h2 {
+        font-size: 1.375em;
+    }
+
+    header h3 {
+        font-size: .8125em;
+    }
+
+    p {
+        font-size: .875em;
+    }
+
+    section h1,
+    section h2,
+    aside h2 {
+        font-size: 1em;
+    }
+
+    section li {
+        font-size: .875em;
+    }
+
+    aside h3 {
+        font-size: .9375em;
+    }
+
+    footer p {
+        font-size: .6875em;
+    }
+}
